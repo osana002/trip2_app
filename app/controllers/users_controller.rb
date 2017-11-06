@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the POSTRIP!"
+      flash[:success] = "ようこそPOSTRIPへ！"
       redirect_to @user
     else
       render 'new'
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "プロフィールを更新しました。"
       redirect_to @user
       # 更新に成功した場合を扱う。
     else
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "ユーザーを削除しました。"
     redirect_to users_url
   end
 
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Please log in."
+        flash[:danger] = "ログインしてください。"
         redirect_to login_url
       end
     end
