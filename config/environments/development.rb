@@ -22,7 +22,7 @@ Rails.application.configure do
   
   config.action_mailer.delivery_method = :test
   
-  host = 'osana.c9users.io' # ここをコピペすると失敗します。自分の環境に合わせてください。
+  host = 'testing3-osana.c9users.io' # ここをコピペすると失敗します。自分の環境に合わせてください。
   
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   
