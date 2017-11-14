@@ -1,10 +1,10 @@
 <h1>POSTRIP</h1>
 
-<p>　<%= @user.name %>　さん,</p>
+<p> <%= @user.name %>さん</p>
 
 <p>
-ようこそPOSTRIPへ！ リンクをクリックしてアカウント認証を行ってください。:
+ようこそPOSTRIPへ！ リンクをクリックしてアカウント認証を行ってください。
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+<%= link_to "ここをクリック", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
