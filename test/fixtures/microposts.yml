@@ -1,13 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+orange:
+  spot_name: "青森駅"
+  spot_address: "青森県青森市柳川一丁目1-1"
+  content: "駅！！！！"
+  created_at: <%= 10.minutes.ago %>
 
-one:
-  spot_name: MyString
-  spot_address: MyString
-  content: MyText
-  user: one
+tau_manifesto:
+　spot_name: "新青森駅"
+　spot_address: "青森県青森市石江高間140-2"
+  content: "Check out the @tauday site by @mhartl: http://tauday.com"
+  created_at: <%= 3.years.ago %>
 
-two:
-  spot_name: MyString
-  spot_address: MyString
-  content: MyText
-  user: two
+cat_video:
+　spot_name: "青森県立青森工業高等学校"
+　spot_address: "青森県青森市馬屋尻清水流204-1"
+  content: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  spot_name: "野内駅"
+  spot_address: "青森県青森市野内菊川"
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
