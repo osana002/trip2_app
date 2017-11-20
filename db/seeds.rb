@@ -17,3 +17,13 @@ User.create!(name:  "Example User",
                activated: true,
               activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  spot_name = "password"
+  spot_address = "password"
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(spot_name: spot_name,
+                                              spot_address: spot_address,
+                                              content: content) }
+end
