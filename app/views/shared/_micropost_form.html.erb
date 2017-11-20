@@ -1,10 +1,15 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+  
+  <div class="spot">
+  <%= f.text_area :spot_name, placeholder: "観光地の名前" %>
+  <%= f.text_area :spot_address, placeholder: "観光地の住所" %>
+  </div>
+  
   <div class="field">
-    <%= f.text_area :spot_name, placeholder: "観光地の名前" %>
-    <%= f.text_area :spot_address, placeholder: "観光地の住所" %>
     <%= f.text_area :content, placeholder: "概要" %>
   </div>
+  
   <%= f.submit "Post", class: "btn btn-primary" %>
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
