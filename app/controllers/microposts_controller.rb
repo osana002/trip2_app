@@ -2,6 +2,14 @@ class MicropostsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
     before_action :correct_user,   only: :destroy
     
+    def index
+        @micropost = Micropost.all
+        respond_to do |format|
+        format.html # => 通常のURLの場合、index.html.erb が返される
+        format.json { render json: @micropost } # URLが.jsonの場合、@microposts.to_json が返される
+        end
+    end
+    
     def create
         @micropost = current_user.microposts.build(micropost_params)
         if @micropost.save

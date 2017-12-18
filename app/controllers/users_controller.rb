@@ -11,6 +11,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.json { render 'index', handlers: 'jbuilder' }
+    end
   end
 
   def new
