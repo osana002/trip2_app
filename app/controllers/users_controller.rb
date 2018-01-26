@@ -12,10 +12,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
     redirect_to root_url and return unless @user.activated?
-  #  respond_to do |format|
-      #format.html { redirect_to :root }
-     # format.json { render 'index', handlers: 'jbuilder' }
-    #end
   end
 
   def new
